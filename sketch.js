@@ -37,8 +37,8 @@ function Symbol(x, y, speed, first) {
     this.y = y;
     this.speed = speed;
     this.switchInterval = round(random(2, 25));
-    this.value;
     this.first = first;
+    this.value = '';
 
     this.setToRandomSymbol = function() {
         //p5 frameCount value
@@ -47,7 +47,7 @@ function Symbol(x, y, speed, first) {
                 0x30A0 + round(random(0, 96))
             );
         }
-    }
+    };
 
     this.rain = function() {
         this.y = (this.y >= height) ? 0 : this.y += this.speed;
@@ -69,7 +69,7 @@ function Stream() {
             y -= symbolSize;
             first = false;
         }
-    }
+    };
 
     this.render = function() {
         this.symbols.forEach(function(symbol) {
